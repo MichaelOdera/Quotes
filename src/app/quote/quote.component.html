@@ -1,14 +1,15 @@
 <div class="container-fluid">
     <h1>Quotes List</h1>
     <!--Create the button to show the best button quote-->
-    <button *ngIf='quotes.length > 0' (click)='showBestQuote()' class='btn-info bestquote'>See Best-Quote</button>
+    <button *ngIf='quotes.length > 0' (click)='showBestQuote()' class='btn bg-primary bestquote'><a href='#best-quote'>Best-Quote</a></button>
     <div class="row">
 
         <div class="col-md-6">
             <div *ngIf='bestQuote && quotes.length>0'>
                 <div id="best-quote" appHighlightbestquote>
-                    <h2>Type: {{bestType}}</h2><hr>
-                    <p>{{bestQuote}}</p>
+                    <h2>Type: {{bestType}}</h2>
+                    <hr>
+                    <p class='quote'>{{bestQuote}}</p>
                     <h5>Author: {{bestAuthor}}</h5>
                     <div id="upvotes">
                         <i (click)='thumbsUp(quote)' class="fa fa-thumbs-up"
@@ -27,10 +28,10 @@
             <div>
                 <!--The list of quotes in the application-->
                 <ol>
-                    <li *ngFor='let quote of quotes'>
-                        <h2>Type: {{quote.type}}</h2>
-                        <p>{{quote.content}}</p>
-                        <h5>Author: {{quote.author}}</h5>
+                    <li *ngFor='let quote of quotes; let i=index;'>
+                        <h2>Type: {{quote.type}}</h2><hr>
+                        <p class="quote">{{quote.content}}</p>
+
                         <div id="upvotes">
                             <i (click)='thumbsUp(quote)' class="fa fa-thumbs-up"
                                 style="font-size:30px; color: #24a0ed;"></i>
@@ -41,7 +42,8 @@
                                 style="font-size:30px; color: #ff3030;"></i>
                             <p>{{quote.downvote}}</p>
                         </div>
-
+                        <button class="btn btn-primary" (click)='toggleAuthor(i)'>Show Author</button>
+                        <app-quote-detail *ngIf='quote.showAuthor' [quote]='quote'></app-quote-detail>
                     </li>
                 </ol>
             </div>
