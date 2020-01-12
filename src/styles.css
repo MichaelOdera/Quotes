@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css';
+#header{
+    background-color: blue;
+    text-align: center;
+    color: white;
+}
+#footer{
+    background-color: brown;
+    color: white;
+    text-align: center;
+    margin-bottom:0;
+}
