@@ -6,7 +6,7 @@ import { Directive, ElementRef } from '@angular/core';
 export class HighlightbestquoteDirective {
 
   constructor(private elem:ElementRef) { 
-    this.elem.nativeElement.style.backgroundColor = '#C66C49';
+    this.elem.nativeElement.style.backgroundColor = '#D4AC91';
   }
 
 }
