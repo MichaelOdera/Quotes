@@ -1,9 +1,32 @@
 li{
     text-align: center;
+    border: 2px solid grey;
+    margin: 2%;
+    border-radius: 20px;
 }
 ol{
     text-align: center;
 }
 #upvotes, #downvotes{
     display: flex;
+    margin: 3%;
 }
+#best-quote{
+    border: 2px solid grey;
+    border-radius: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    margin: 2%;
+}
+
+#best-quote p:first-of-type{
+    padding: 3%;
+}
+
+.bestquote{
+    position: fixed;
+    z-index:1;
+    margin-left: 0;
+}
+
+
