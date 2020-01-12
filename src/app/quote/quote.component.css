@@ -1,8 +1,26 @@
+.container-fluid{
+    padding-top: 3%;
+}
+
+.container-fluid h1:first-child{
+    color: white;
+    margin-left: 3%;
+    z-index: 1;
+    text-align: center;
+}
+
+.container-fluid hr:first-of-type{
+    width: 50%;
+}
+
 li{
     text-align: center;
     border: 2px solid grey;
     margin: 2%;
     border-radius: 20px;
+    padding: 2%;
+    background-color: #5F3C1F;
+    color: white;
 }
 ol{
     text-align: center;
@@ -11,22 +29,56 @@ ol{
     display: flex;
     margin: 3%;
 }
+
+/*best quote button styling*/
 #best-quote{
     border: 2px solid grey;
     border-radius: 30px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
     margin: 2%;
+    padding: 2%;
 }
 
-#best-quote p:first-of-type{
+/*the quote content styling*/
+.quote{
     padding: 3%;
+    font-weight: 500;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 2%;
+    text-align: center;
+    color: #F5D6AB;
+    border-radius: 20px;
+    text-decoration: underline;
 }
 
 .bestquote{
     position: fixed;
     z-index:1;
     margin-left: 0;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.btn-info:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+hr{
+    border: 2px solid grey;
+}
+
+.bestcontent{
+    color: #5F3C1F;
+}
+
+#likes-and-dislikes{
+    display: flex;
+    justify-content: center;
 }
 
 
