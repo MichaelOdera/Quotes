@@ -1,25 +1,29 @@
 <div class="container-fluid">
-    <h1>Quotes List</h1>
+    
     <!--Create the button to show the best button quote-->
-    <button *ngIf='quotes.length > 0' (click)='showBestQuote()' class='btn bg-primary bestquote'><a href='#best-quote'>See Best-Quote</a></button>
+    <button *ngIf='quotes.length > 0' (click)='showBestQuote()' class='btn bg-primary bestquote'><a
+            href='#best-quote'>See Best-Quote</a></button>
     <div class="row">
 
         <div class="col-md-6">
+            <h1>Quotes List</h1><hr>
             <div *ngIf='bestQuote && quotes.length>0'>
                 <div id="best-quote" appHighlightbestquote>
                     <h4>Submitted By: {{bestSubmitter}}</h4>
                     <hr>
                     <h5 class='bestcontent'>{{bestQuote}}</h5>
                     <h5>Author: {{bestAuthor}}</h5>
-                    <div id="upvotes">
-                        <i (click)='thumbsUp(quote)' class="fa fa-thumbs-up"
-                            style="font-size:30px; color: #24a0ed;"></i>
-                        <p>{{mostLikes}}</p>
-                    </div>
-                    <div id="downvotes">
-                        <i (click)='thumbsDown(quote)' class="fa fa-thumbs-down"
-                            style="font-size:30px; color: #ff3030;"></i>
-                        <p>{{downVote}}</p>
+                    <div id="likes-and-dislikes">
+                        <div id="upvotes">
+                            <i (click)='thumbsUp(quote)' class="fa fa-thumbs-up"
+                                style="font-size:30px; color: blue;"></i>
+                            <p>{{mostLikes}}</p>
+                        </div>
+                        <div id="downvotes">
+                            <i (click)='thumbsDown(quote)' class="fa fa-thumbs-down"
+                                style="font-size:30px; color: #1A0D07;"></i>
+                            <p>{{downVote}}</p>
+                        </div>
                     </div>
 
                 </div>
@@ -32,20 +36,24 @@
                         <h3>Submitted By: {{quote.name}}</h3>
                         <p>posted: {{quote.postedDate|dateCount}} days ago.</p>
                         <hr>
-                        <p class="quote">{{quote.content}}</p>
+                        <p class="quote">"{{quote.content}}"</p>
+                        <div id="likes-and-dislikes">
+                            <div id="upvotes">
+                                <i (click)='thumbsUp(quote)' class="fa fa-thumbs-up"
+                                    style="font-size:30px; color: #D4AC91;"></i>
+                                <p>{{quote.upvote}}</p>
+                            </div>
+                            <div id="downvotes">
+                                <i (click)='thumbsDown(quote)' class="fa fa-thumbs-down"
+                                    style="font-size:30px; color: #1A0D07;"></i>
+                                <p>{{quote.downvote}}</p>
+                            </div>
+                        </div>
 
-                        <div id="upvotes">
-                            <i (click)='thumbsUp(quote)' class="fa fa-thumbs-up"
-                                style="font-size:30px; color: #D4AC91;"></i>
-                            <p>{{quote.upvote}}</p>
-                        </div>
-                        <div id="downvotes">
-                            <i (click)='thumbsDown(quote)' class="fa fa-thumbs-down"
-                                style="font-size:30px; color: #1A0D07;"></i>
-                            <p>{{quote.downvote}}</p>
-                        </div>
-                        <button class="btn btn-primary" (click)='toggleAuthor(i)'>Show Author</button>
-                        <app-quote-detail *ngIf='quote.showAuthor' (isViewed)='quoteDelete($event, i)' [quote]='quote'></app-quote-detail>
+
+                        <button class="btn btn-outline-primary" (click)='toggleAuthor(i)'>Show Author</button>
+                        <app-quote-detail *ngIf='quote.showAuthor' (isViewed)='quoteDelete($event, i)' [quote]='quote'>
+                        </app-quote-detail>
                     </li>
                 </ol>
             </div>
@@ -54,7 +62,7 @@
         </div>
 
         <div class="col-md-6">
-            Here it goes
+            <app-quote-form (addQuote)='addNewQuote($event)'></app-quote-form>
 
         </div>
     </div>
