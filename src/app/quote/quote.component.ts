@@ -27,6 +27,10 @@ export class QuoteComponent implements OnInit {
     new Quote("Scientific", "Science Changes the world", "Potiphar Clarks",0,0,),
   ];
 
+  toggleAuthor(index){
+    this.quotes[index].showAuthor = !this.quotes[index].showAuthor;
+  }
+
 
   showBestQuote(){
     this.mostLikes=0;
