@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.css';
 #header{
-    background-color: blue;
+    background-color: #1A0D07;
     text-align: center;
     color: white;
     position: fixed;
@@ -10,7 +10,7 @@
     top:0;
 }
 #footer{
-    background-color: brown;
+    background-color: #1A0D07;
     color: white;
     text-align: center;
     bottom:0;
