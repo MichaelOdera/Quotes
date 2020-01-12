@@ -1,24 +1,51 @@
-<div class="container">
+<div class="container-fluid">
     <h1>Quotes List</h1>
+    <!--Create the button to show the best button quote-->
+    <button *ngIf='quotes.length > 0' (click)='showBestQuote()' class='btn-info bestquote'>See Best Quote</button>
     <div class="row">
 
         <div class="col-md-6">
-            <ol>
-                <li *ngFor='let quote of quotes'>
-                    <h2>Quote title: {{quote.type}}</h2>
-                    <p>Quote Content: {{quote.content}}</p>
-                    <p>Quote Author: {{quote.author}}</p>
+            <div *ngIf='bestQuote && quotes.length>0'>
+                <div id="best-quote" appHighlightbestquote>
+                    <h2>Type: {{bestType}}</h2><hr>
+                    <p>{{bestQuote}}</p>
+                    <h5>Author: {{bestAuthor}}</h5>
                     <div id="upvotes">
-                        <button (click)='thumbsUp(quote)'>Like</button>&nbsp;
-                        <p>Likes: {{quote.upvote}}</p>
+                        <i (click)='thumbsUp(quote)' class="fa fa-thumbs-up"
+                            style="font-size:30px; color: #24a0ed;"></i>
+                        <p>{{mostLikes}}</p>
                     </div>
                     <div id="downvotes">
-                        <button (click)='thumbsDown(quote)'>Dislike</button>&nbsp;
-                        <p>Dislike: {{quote.downvote}}</p>
+                        <i (click)='thumbsDown(quote)' class="fa fa-thumbs-down"
+                            style="font-size:30px; color: #ff3030;"></i>
+                        <p>{{downVote}}</p>
                     </div>
 
-                </li>
-            </ol>
+                </div>
+
+            </div>
+            <div>
+                <!--The list of quotes in the application-->
+                <ol>
+                    <li *ngFor='let quote of quotes'>
+                        <h2>Type: {{quote.type}}</h2>
+                        <p>{{quote.content}}</p>
+                        <h5>Author: {{quote.author}}</h5>
+                        <div id="upvotes">
+                            <i (click)='thumbsUp(quote)' class="fa fa-thumbs-up"
+                                style="font-size:30px; color: #24a0ed;"></i>
+                            <p>{{quote.upvote}}</p>
+                        </div>
+                        <div id="downvotes">
+                            <i (click)='thumbsDown(quote)' class="fa fa-thumbs-down"
+                                style="font-size:30px; color: #ff3030;"></i>
+                            <p>{{quote.downvote}}</p>
+                        </div>
+
+                    </li>
+                </ol>
+            </div>
+
 
         </div>
 
