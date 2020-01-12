@@ -51,7 +51,7 @@ export class QuoteComponent implements OnInit {
   //function to add a new quote
   addNewQuote(quote){
     quote.postedDate= new Date(quote.postedDate);
-    quote = new Quote(quote.name, quote.content, quote.author, quote.postedDate, quote.upvote, quote.downvote);
+    // quote = new Quote(quote.name, quote.content, quote.author, quote.postedDate, quote.upvote, quote.downvote);
     this.quotes.push(quote); 
   }
 
