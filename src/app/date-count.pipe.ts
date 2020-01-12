@@ -8,10 +8,7 @@ export class DateCountPipe implements PipeTransform {
   //function to calculate the number of days since posting
   transform(value:any):number {
     
-    let today:Date = new Date();
-    console.log(today)
-    let todayWithNoTime:any = new Date(today.getFullYear(), today.getMonth(), today.getDay())
-    console.log(todayWithNoTime)
+    let todayWithNoTime:any = new Date();
     var dateDifference = Math.abs(todayWithNoTime-value);//returns value in seconds 
     console.log(value)
     const secondsInDay = 86400;
@@ -20,8 +17,8 @@ export class DateCountPipe implements PipeTransform {
     console.log(dateCounter)
     
 
-    if(dateCounter > 1 && todayWithNoTime > value ){
-      return dateCounter; 
+    if(dateCounter > 1 ){
+      return Math.round(dateCounter); 
       }else{
       return 0;
     }
