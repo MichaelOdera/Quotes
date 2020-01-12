@@ -20,7 +20,7 @@ export class DateCountPipe implements PipeTransform {
     console.log(dateCounter)
     
 
-    if(dateCounter > 1 && value > todayWithNoTime ){
+    if(dateCounter > 1 && todayWithNoTime > value ){
       return dateCounter; 
       }else{
       return 0;
