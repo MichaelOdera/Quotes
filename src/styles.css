@@ -17,3 +17,9 @@
     position: fixed;
     width: 100%;
 }
+
+body{
+    background-image: url(https://i.pinimg.com/236x/9b/d9/fa/9bd9faf5cfc65904597366ec6b7134d6.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
