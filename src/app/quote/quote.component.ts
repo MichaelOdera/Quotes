@@ -12,7 +12,7 @@ export class QuoteComponent implements OnInit {
   mostLikes= 0;
   bestQuote:string;
   bestAuthor:string;
-  bestType:string;
+  bestSubmitter:string;
   downVote:number;
 
   //Initialise the variables for the upvotes and the downvotes
@@ -22,9 +22,9 @@ export class QuoteComponent implements OnInit {
 
 
   quotes:Quote[]=[
-    new Quote("Inspirational", "I am happy about the current economy", "Mildred kins",0,0,),
-    new Quote("Scientific", "Science Changes the world", "Potiphar Clarks",0,0,),
-    new Quote("Scientific", "Science Changes the world", "Potiphar Clarks",0,0,),
+    new Quote("Fredrick Thomson", "I am happy about the current economy, It always lies at the center of power", "Mildred kins", new Date(2019, 2, 4),0,0,),
+    // new Quote("Scientific", "Science Changes the world", "Potiphar Clarks",new Date(2019, 4, 6),0,0,),
+    // new Quote("Scientific", "Science Changes the world", "Potiphar Clarks",new Date(2019, 3, 5),0,0,),
   ];
 
   toggleAuthor(index){
@@ -32,11 +32,13 @@ export class QuoteComponent implements OnInit {
   }
 
 
+  //function to show the best quote
+
   showBestQuote(){
     this.mostLikes=0;
     for(let i=0; i<this.quotes.length; i++){
       if(this.quotes[i].upvote>this.mostLikes){
-        this.bestType = this.quotes[i].type;
+        this.bestSubmitter = this.quotes[i].name;
         this.bestQuote = this.quotes[i].content;
         this.mostLikes = this.quotes[i].upvote;
         this.bestAuthor = this.quotes[i].author;
@@ -46,7 +48,22 @@ export class QuoteComponent implements OnInit {
     }
   }
 
+  //function to add a new quote
+  addNewQuote(quote){
+    quote.postedDate= new Date(quote.postedDate);
+    quote = new Quote(quote.name, quote.content, quote.author, quote.postedDate, quote.upvote, quote.downvote);
+    this.quotes.push(quote); 
+  }
 
+  //function to delete a quote
+  quoteDelete(isViewed, index){
+    if(isViewed){
+      let toDelete =confirm(`Are you sure you want to delete this quote by ${this.quotes[index].name}?`);
+      if(toDelete){
+        this.quotes.splice(index, 1);
+      }
+    }
+  }
 
   //the downvote and upvote function section
   thumbsUp(quote){
