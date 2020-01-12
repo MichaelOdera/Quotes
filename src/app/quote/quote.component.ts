@@ -22,7 +22,7 @@ export class QuoteComponent implements OnInit {
 
 
   quotes:Quote[]=[
-    new Quote("Fredrick Thomson", "I am happy about the current economy, It always lies at the center of power", "Mildred kins", new Date(2019, 2, 4),0,0,),
+    new Quote("Fredrick Thomson", "I am happy about the current economy, It always lies at the center of power", "Mildred kins", new Date(2020, 1, 1),0,0,),
     // new Quote("Scientific", "Science Changes the world", "Potiphar Clarks",new Date(2019, 4, 6),0,0,),
     // new Quote("Scientific", "Science Changes the world", "Potiphar Clarks",new Date(2019, 3, 5),0,0,),
   ];
