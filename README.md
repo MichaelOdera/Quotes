@@ -5,6 +5,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Author
 [Michael Ochieng' Odera](https://www.github.com/MichaelOdera)
 
+## Date Published
+12th January 2020
+
 
 ## Contributors
 Michael Ochieng' Odera
