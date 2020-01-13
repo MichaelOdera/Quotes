@@ -16,6 +16,9 @@ In case of any bugs or improvements, contact me through enmail:michogelira@gmail
 ## Development server
 developed on github gh-pages
 
+## Code Beat Badge
+[![codebeat badge](https://codebeat.co/badges/9d44c817-1492-4723-b562-275b966e2351)](https://codebeat.co/projects/github-com-michaelodera-quotes-master)
+
 
 ## Bugs Encountered
 There were no major bugs only that the date pipe had to be modified for it to read correctly
